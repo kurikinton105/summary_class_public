@@ -1,0 +1,3 @@
+azure-cognitiveservices-speech==1.12.1
+Janome==0.3.10
+numpy==1.18.3
