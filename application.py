@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request #追加
-from bag-of-words import bag_of_words_sum
+from bag_of_words import bag_of_words_sum
 app = Flask(__name__)
 
 @app.route("/num", methods=["GET", "POST"])
@@ -37,7 +37,7 @@ def web():
         </form>"""
     else:
         #try:
-        result = bag_of_words_sum(str(request.form["text"]))
+        result = bag_of_words_sum(str(request.form["text"]),50,100)
         return """
         <H1>参考文献を自動生成してくれるチートツールを作りたかった</H1>
         URLを入力してください
