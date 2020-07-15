@@ -1,11 +1,13 @@
 # summary_class
 
 ### 概要
-Azure Speech と word2vecを使って、録音した授業の音声データから授業の要約を作ろうというぷプロジェクト
+Azure Speech と bag-of-wordsを使って、録音した授業の音声データから授業の要約を作ろうというプロジェクト
 
 ### 作成者
 yama @kurikinton105
+
 tomsoyaN
+
 jima884
 
 ### 使うための前準備
@@ -14,9 +16,11 @@ jima884
 Azureからアクセスキーをゲットしてください。password.py内に記述します。
 
 
-#### word2vecの学習済みファイルを取得してください
+### AzureにWEBアプリケーションとして公開しています。
 
-以下のページからja.tsvを取得し、jaフォルダ内に追加してください
-https://drive.google.com/open?id=0B0ZXk88koS2KMzRjbnE4ZHJmcWM
+文字を要約する部分のみです。
 
-(https://github.com/Kyubyong/wordvectors)のプロジェクトの事前学習済みモデルを使用しています。
+WEBアプリケーション
+
+https://summary-classes-web.azurewebsites.net/
+
