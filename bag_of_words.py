@@ -109,11 +109,13 @@ def bag_of_words_sum(input_text,compression,number_of_sentence): #input_text：�
         output_index.append(sort_index[i])
 
     output_index.sort
+    output_index = np.array(output_index)
+    output_index = np.sort(output_index)
     #print(output_index)
 
 
     for i in range(len(output_index)):
-        #print(input_text_copy[output_index[i]]) #出力
+        #print(input_text_copy[output_index[i]])
         output.append(input_text_copy[output_index[i]])
 
     return output

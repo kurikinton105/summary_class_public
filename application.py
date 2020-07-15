@@ -39,8 +39,8 @@ def web():
         #try:
         result = bag_of_words_sum(str(request.form["text"]),50,100)
         return """
-        <H1>参考文献を自動生成してくれるチートツールを作りたかった</H1>
-        URLを入力してください
+        <H1>bag-of-wordsを使った要約アプリ</H1>
+        文章を入力してください
         <form action="/" method="POST">
             <input name="text"></input>
             </form>
