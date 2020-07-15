@@ -31,20 +31,27 @@ def web():
         #WEBリンクを代入
         return """
         <H1>bag-of-wordsを使った要約アプリ</H1>
-        文章を入力してください
+        2文以上の文章を入力してください
         <form action="/" method="POST">
         <input name="text"></input>
         </form>"""
     else:
-        #try:
-        result = bag_of_words_sum(str(request.form["text"]),50,100)
-        return """
-        <H1>参考文献を自動生成してくれるチートツールを作りたかった</H1>
-        URLを入力してください
-        <form action="/" method="POST">
-            <input name="text"></input>
-            </form>
-            {}<br>""".format(result)
+        try:
+            result = bag_of_words_sum(str(request.form["text"]),50,100)
+            return """
+            <H1>bag-of-wordsを使った要約アプリ</H1>
+            2文以上の文章を入力してください
+            <form action="/" method="POST">
+                <input name="text"></input>
+                </form>
+                {}<br>""".format(result)
+        except:
+            return """
+                <H1>bag-of-wordsを使った要約アプリ</H1>
+                文章は２文以上にしてください。もう一度文章を入力してください
+                <form action="/" method="POST">
+                <input name="text"></input>
+                </form>"""
 
 @app.route("/web", methods=["GET", "POST"])
 def web2():
