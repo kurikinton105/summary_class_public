@@ -26,6 +26,28 @@ def odd_even():
                 </form>"""
 
 @app.route("/", methods=["GET", "POST"])
+def main_page():
+    #return render_template("make-class-easy.html")
+
+    if request.method == 'GET':
+        print("GET")
+        text = request.args.get("input_text")
+        return render_template("make-class-easy.html",text=text)
+    elif request.method == 'POST':
+        print("POST")
+        text = request.form["input_text"]
+        #print(text)
+        #return render_template("make-class-easy.html",text=text)
+
+        try:
+            result = bag_of_words_sum(str(text),50,100)
+            #print(result)
+            return render_template("make-class-easy.html",text=result)
+        except:
+            return render_template("make-class-easy.html",text="Error:文章は２文以上にしてください。もう一度文章を入力してください")
+
+
+@app.route("/class", methods=["GET", "POST"])
 def web():
     if request.method == "GET":
         #WEBリンクを代入
@@ -42,9 +64,9 @@ def web():
             <H1>bag-of-wordsを使った要約アプリ</H1>
             2文以上の文章を入力してください
             <form action="/" method="POST">
-                <input name="text"></input>
-                </form>
-                {}<br>""".format(result)
+            <input name="text"></input>
+            </form>
+            {}<br>""".format(result)
         except:
             return """
                 <H1>bag-of-wordsを使った要約アプリ</H1>
@@ -81,28 +103,6 @@ def web2():
             <form action="/" method="POST">
             <input name="url"></input>
             </form>"""
-
-@app.route('/hello')
-def hello():
-    name = "Hoge"
-    #return name
-    return render_template('hello.html', name=name) #変更
-
-#/goodのところに反映される。テンプレが
-@app.route('/good')
-def good():
-    name = "Good"
-    return render_template('good.html', name=name)
-
-@app.route('/form')
-def form():
-   return render_template('form.html')
-
-@app.route('/confirm', methods = ['POST', 'GET'])
-def confirm():
-   if request.method == 'POST':
-      result = request.form
-      return render_template("confirm.html",result = result)
 
 ## おまじない
 if __name__ == "__main__":
