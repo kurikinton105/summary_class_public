@@ -1,12 +1,13 @@
 
 header{
-    background-color: lime;
+    background-color: lightskyblue;
     margin-bottom: 0.5rem;
     padding: 1.5rem;
 }
 
 header h1{
     font-size: 2.5rem;
+    font-family: serif;
 }
 
 article{
