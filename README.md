@@ -7,9 +7,9 @@ Azure Speech と bag-of-wordsを使って、録音した授業の音声データ
 ### 作成者
 yama [@kurikinton105](https://github.com/kurikinton105)
 
-tomSoya @tomsoyaN
+tomSoya [@tomsoyaN](https://github.com/tomsoyaN)
 
-jima884
+jima884 [@jima884](https://github.com/jima884)
 
 ## 使うための前準備
 #### Azure からアクセスキーを取得
@@ -43,4 +43,12 @@ Azureからアクセスキーをゲットしてください。password.py内に�
 WEBアプリケーション
 
 https://summary-classes-web.azurewebsites.net/
+
+
+ローカル環境での実行方法
+
+```bash
+    export FLASK_APP=application.py
+    flask run
+```
 
