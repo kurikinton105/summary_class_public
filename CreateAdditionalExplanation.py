@@ -97,9 +97,9 @@ def extract_textFhtml(soup):
 
 #渡されたテキストファイルから重要語を求め,各重要語を説明するサイトの本文を返します.
 #戻り値[word,text]のリスト word:重要語,text:重要語に対応する説明サイトの本文
-def CreateAdditionalExplanation(filename):
+def CreateAdditionalExplanation(filename,c=-1):
     additionals = []
-    importances = Extract_ImportantWords(filename)
+    importances = Extract_ImportantWords(filename,c)
     for word in importances:
         try:
             urls = get_search_url(word)
