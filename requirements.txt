@@ -1,5 +1,5 @@
 azure-cognitiveservices-speech==1.12.1
-Janome==0.3.10
+janome==0.3.10
 numpy==1.18.3
 click==6.7
 Flask==1.0.2
@@ -8,3 +8,4 @@ Jinja2>=2.10.1
 MarkupSafe==1.0
 Werkzeug==0.15.3
 beautifulsoup4==4.9.1
+requests==2.23.0
