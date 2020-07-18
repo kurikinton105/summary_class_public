@@ -3,9 +3,9 @@
 ## 概要
 Azure Speech と bag-of-wordsを使って、録音した授業の音声データから授業の要約を作ろうというプロジェクト
 
-## 作成者
 
-yama @kurikinton105
+### 作成者
+yama [@kurikinton105](https://github.com/kurikinton105)
 
 tomSoya @tomsoyaN
 
