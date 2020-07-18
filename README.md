@@ -24,16 +24,7 @@ Azureからアクセスキーをゲットしてください。password.py内に�
     $py -m install -r requirements.txt
 ```
 を実行する  
-  
-2. 下記よりtermextractをダウンロードし解凍する.  
-  http://gensen.dl.itc.u-tokyo.ac.jp/soft/pytermextract-0_01.zip  
-  コマンドにて解凍先に移動し,
-  ```bash
-    $pip install .
-    または
-    $py -m install .
-  ```
-を実行する  
+
   
 ## デモ
 #### AzureにWEBアプリケーションとして公開しています。

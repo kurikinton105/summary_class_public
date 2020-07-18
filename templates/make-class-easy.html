@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <title>Make Class Easy</title>
         <meta name="description" content="Make Class Easyは皆さんの学習をサポートします。">
+        <meta name="author" content="Cos5year"/>
+        <meta name="keywords" content="授業","要約","学修支援" />
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <link rel="stylesheet" href="http://127.0.0.1:5000/static/styles/make-class-easy.css">
         <link rel="stylesheet" href="static/styles/make-class-easy.css">
@@ -53,8 +55,15 @@
                 </div>
                 <div class="content">
                     <ul>
-                        <li>あいうえお</li>
-                        <li>かきくけこ</li>
+                        {% if val == 0%}
+                            <p>ここに参考文献が出力されます</p>
+                        {% else%}
+                            {% for data in data_word %} <!--ループでgoogleの検索結果を出力する-->
+                                {% if loop.index-1 <= 100%}
+                                    <li><a href=https://www.google.co.jp/search?q={{data_word[loop.index-1]}} target="_blank"> {{data_word[loop.index-1]}}</a></li>
+                                {% endif%}
+                            {% endfor %}
+                        {% endif%}
                     </ul>
                 </div>
             </section>

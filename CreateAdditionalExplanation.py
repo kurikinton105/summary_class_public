@@ -8,8 +8,9 @@ from janome.tokenizer import Tokenizer
 
 #上位c個の重要複合語のリストを返します.c=-1(デフォルト)ですべての複合語を返します.
 def Extract_ImportantWords(text,c=-1):
-    if(debug):print(text)
 
+    if(debug):print(text)
+    
     t = Tokenizer()
     tokenize_text = t.tokenize(text)
     #頻度ベクトル生成
@@ -36,7 +37,6 @@ def Extract_ImportantWords(text,c=-1):
     if(debug):print(imp_words)
     return imp_words
 
-    
 
 # User-Agent
 
@@ -96,6 +96,7 @@ def extract_textFhtml(soup):
 #戻り値[word,text]のリスト word:重要語,text:重要語に対応する説明サイトの本文
 def CreateAdditionalExplanation(text,c=-1):
     additionals = []
+
     importances = Extract_ImportantWords(text,c)
     for word in importances:
         try:
