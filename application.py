@@ -2,28 +2,15 @@ from flask import Flask, render_template,request #追加
 from bag_of_words import bag_of_words_sum
 app = Flask(__name__)
 
-@app.route("/num", methods=["GET", "POST"])
+@app.route("/cos5year", methods=["GET", "POST"])
 def odd_even():
     if request.method == "GET":
         return """
-        下に整数を入力してください。奇数か偶数か判定します
-        <form action="/" method="POST">
-        <input name="num"></input>
-        </form>"""
-    else:
-        try:
-            return """
-            下に整数を入力してください。奇数か偶数か判定します
-            <form action="/" method="POST">
-            <input name="num"></input>
-            </form>
-            {}は{}です！""".format(str(request.form["num"]), ["偶数", "奇数"][int(request.form["num"]) % 2])
-        except:
-            return """
-                有効な数字ではありません！入力しなおしてください。
-                <form action="/" method="POST">
-                <input name="num"></input>
-                </form>"""
+        <H1>我々はCos5year(こすごいやー)だ！！！！<H1>
+        <H1>おそらく地球を侵略しにきた！！！！<H1>
+        <H1>なんかいい感じの開発して世界を征服するぞ！！！！！<H1>
+        （ごめんなさい...ふざけました...）
+        """
 
 @app.route("/", methods=["GET", "POST"])
 def main_page():
@@ -31,7 +18,8 @@ def main_page():
 
     if request.method == 'GET':
         print("GET")
-        text = request.args.get("input_text")
+        #text = request.args.get("input_text")
+        text = "ここに結果が出力されます"
         return render_template("make-class-easy.html",text=text)
     elif request.method == 'POST':
         print("POST")
