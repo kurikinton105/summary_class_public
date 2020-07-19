@@ -18,4 +18,4 @@ def MakeClassEasy(text,compression,number_of_sentence,c=-1):
             e[1] = "補足説明を生成できませんでした."
         output = output + e[0] + "\n" + e[1] + "\n\n"#つなげる
     if(debug):print(explain)
-    return (output,time.time()-start)
+    return (summary,explain,time.time()-start)

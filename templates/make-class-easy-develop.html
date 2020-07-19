@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Make Class Easy Develop ver</title>
+        <meta name="description" content="Make Class Easyは皆さんの学習をサポートします。">
+        <meta name="author" content="Cos5year"/>
+        <meta name="keywords" content="授業","要約","学修支援" />
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="http://127.0.0.1:5000/static/styles/make-class-easy.css">
+        <link rel="stylesheet" href="static/styles/make-class-easy.css">
+
+    </head>
+    <body>
+        <header>
+            <h1>Make Class Easy Develop ver</h1>
+        </header>
+        <article>
+            <section>
+                <div class="subtitle">
+                    <h1>概要</h1>
+                </div>
+                <div class="content">
+                    <p>Make Class Easy は皆さんの学修をサポートするサービスです。</p>
+                    <p>文章を入力すると注釈をつけた要約文章を生成します。</p>
+                </div>
+            </section>
+            <section>
+                <div class="subtitle">
+                    <h1>入力</h1>
+                </div>
+                <div class="content">
+                    <form action="" method="POST">
+                        <textarea type="text" name="input_text" placeholder="文章を入力してください"></textarea>
+                        <p></p>
+                        <input type="submit" value="実行">
+                    </form>
+                </div>
+            </section>
+            <section>
+                <div class="subtitle">
+                    <h1>出力</h1>
+                </div>
+                <div class="content">
+                    <!--
+                      ここに結果を書けばいいのね！（kurikinton)
+                    -->
+                    {% if val != 0%}
+                        <p>処理時間:{{process_time}}秒</p>
+                    {%endif%}
+                    <p>{{text}}</p>
+                </div>
+            </section>
+            <section>
+                <div class="subtitle">
+                    <h1>参考資料</h1>
+                </div>
+                <div class="content">
+                    <ul>
+                        {% if val == 0%}
+                            <p>ここに参考文献が出力されます</p>
+                        {% else%}
+                            {% for data in data_explain %} <!--ループでgoogleの検索結果を出力する-->
+                                {% if loop.index-1 <= 100%}
+                                <li><details>
+                                    <summary><a href=https://www.google.co.jp/search?q={{data[0]}} target="_blank"> {{data[0]}}</a></summary>
+                                    {{data[1]}}
+                                </details></li>
+                                {% endif%}
+                            {% endfor %}
+                        {% endif%}
+                    </ul>
+                </div>
+            </section>
+            
+            <!--テンプレート
+                追加したい章があったらこれを使うのだ！！
+            <section>
+                <div class="subtitle">
+                    <h1>章のタイトルはここに</h1>
+                </div>
+                <div class="content">
+                    章の内容はここに書いてね
+                </div>
+            </section>
+            -->
+        </article>
+        <footer>
+            <div class="member">
+                <h2>Cos5year</h2>
+                <p>R.I (<a href="https://github.com/jimar884" target="_blank" style="color:lightgray">@jimar884</a>)</p>
+                <p>yama (<a href="https://github.com/kurikinton105" target="_blank" style="color:lightgray">@kurikinton105</a>)</p>
+                <p>S.N (<a href="https://github.com/tomsoyaN" target="_blank" style="color:lightgray">@	tomsoyaN</a>)</p>
+            </div>
+        </footer>
+    </body>
+
+</html>
