@@ -57,4 +57,4 @@ termextract
 
 http://gensen.dl.itc.u-tokyo.ac.jp/
 
-さんのコードを使用しています。
+のコードを使用しています。
