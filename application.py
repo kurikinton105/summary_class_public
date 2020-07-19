@@ -33,22 +33,22 @@ def main_page():
             return render_template("make-class-easy.html",text="Error:文章は２文以上にしてください。もう一度文章を入力してください")
 
 @app.route("/develop", methods=["GET", "POST"])
-def main_page():
+def develop_page():
     if request.method == 'GET':
         #print("GET")
         text = "ここに結果が出力されます"
         data_word = [" "]
         val = False
-        return render_template("make-class-easy.html",text=text,data_word=data_word,val = val)
+        return render_template("make-class-easy-develop.html",text=text,data_word=data_word,val = val)
     elif request.method == 'POST':
         #print("POST")
         val = True #フラグを１にする
         text = request.form["input_text"]
         try:
             summary,explain,time = MakeClassEasy(str(text),50,100)
-            return render_template("make-class-easy.html",text=result,data_word=data_word,val = val)
+            return render_template("make-class-easy-develop.html",text=summary,data_explain=explain,val = val,process_time=time)
         except:
-            return render_template("make-class-easy.html",text="Error:文章は２文以上にしてください。もう一度文章を入力してください")
+            return render_template("make-class-easy-develop.html",text="Error:文章は２文以上にしてください。もう一度文章を入力してください")
 
 
 ## おまじない
