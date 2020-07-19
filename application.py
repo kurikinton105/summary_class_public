@@ -1,5 +1,6 @@
 from flask import Flask, render_template,request #追加
 from bag_of_words import bag_of_words_sum
+from MakeClassEasy import MakeClassEasy
 app = Flask(__name__)
 
 @app.route("/cos5year", methods=["GET", "POST"])
@@ -30,6 +31,25 @@ def main_page():
             return render_template("make-class-easy.html",text=result,data_word=data_word,val = val)
         except:
             return render_template("make-class-easy.html",text="Error:文章は２文以上にしてください。もう一度文章を入力してください")
+
+@app.route("/develop", methods=["GET", "POST"])
+def main_page():
+    if request.method == 'GET':
+        #print("GET")
+        text = "ここに結果が出力されます"
+        data_word = [" "]
+        val = False
+        return render_template("make-class-easy.html",text=text,data_word=data_word,val = val)
+    elif request.method == 'POST':
+        #print("POST")
+        val = True #フラグを１にする
+        text = request.form["input_text"]
+        try:
+            summary,explain,time = MakeClassEasy(str(text),50,100)
+            return render_template("make-class-easy.html",text=result,data_word=data_word,val = val)
+        except:
+            return render_template("make-class-easy.html",text="Error:文章は２文以上にしてください。もう一度文章を入力してください")
+
 
 ## おまじない
 if __name__ == "__main__":
