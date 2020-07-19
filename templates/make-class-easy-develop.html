@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>Make Class Easy</title>
+        <title>Make Class Easy Develop ver</title>
         <meta name="description" content="Make Class Easyは皆さんの学習をサポートします。">
         <meta name="author" content="Cos5year"/>
         <meta name="keywords" content="授業","要約","学修支援" />
@@ -13,7 +13,7 @@
     </head>
     <body>
         <header>
-            <h1>Make Class Easy</h1>
+            <h1>Make Class Easy Develop ver</h1>
         </header>
         <article>
             <section>
@@ -30,7 +30,7 @@
                     <h1>入力</h1>
                 </div>
                 <div class="content">
-                    <form action="" method="POST" name="input_text" >
+                    <form action="" method="POST">
                         <textarea type="text" name="input_text" placeholder="文章を入力してください"></textarea>
                         <p></p>
                         <input type="submit" value="実行">
@@ -45,7 +45,9 @@
                     <!--
                       ここに結果を書けばいいのね！（kurikinton)
                     -->
-
+                    {% if val != 0%}
+                        <p>処理時間:{{process_time}}秒</p>
+                    {%endif%}
                     <p>{{text}}</p>
                 </div>
             </section>
@@ -70,7 +72,7 @@
                     </ul>
                 </div>
             </section>
-
+            
             <!--テンプレート
                 追加したい章があったらこれを使うのだ！！
             <section>
