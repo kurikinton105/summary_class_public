@@ -1,7 +1,7 @@
 from flask import Flask, render_template,request #追加
 from bag_of_words import bag_of_words_sum
 from MakeClassEasy import MakeClassEasy
-import os
+
 app = Flask(__name__)
 @app.route("/cos5year", methods=["GET", "POST"])
 def odd_even():
