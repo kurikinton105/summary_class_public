@@ -43,3 +43,18 @@ https://summary-classes-web.azurewebsites.net/
     flask run
 ```
 
+
+
+## 使用技術
+Azure Speech
+
+Bag-of-words
+
+Cos類似度
+
+
+termextract
+
+http://gensen.dl.itc.u-tokyo.ac.jp/
+
+さんのコードを使用しています。
