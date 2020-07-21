@@ -7,7 +7,7 @@ Flask==1.0.2
 itsdangerous==0.24
 Jinja2>=2.10.1
 MarkupSafe
-Werkzeug==0.15.3
+Werkzeug
 beautifulsoup4==4.9.1
 requests==2.23.0
 
