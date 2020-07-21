@@ -46,7 +46,14 @@ def develop_page():
         val = True #フラグを１にする
         text = request.form["input_text"]
         try:
-            result,explains,time = MakeClassEasy(str(text),50,100)
+            if(request.args.get('c') == None):
+                c= 3
+            else:
+                c = int(request.args.get('c'))
+        except:
+            return render_template("make-class-easy-develop.html",text="Error:不正なクエリパラメータ。使い方:URLの最後に?c=数値　をつけてください。")
+        try:
+            result,explains,time = MakeClassEasy(str(text),50,100,c)
             return render_template("make-class-easy-develop.html",text=result,data_explain=explains,val = val,process_time = time)
         except:
             return render_template("make-class-easy-develop.html",text="Error:文章は２文以上にしてください。もう一度文章を入力してください")
