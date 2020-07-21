@@ -15,7 +15,11 @@ jima884 [@jima884](https://github.com/jima884)
 全手順において,まずこのレポジトリをダウンロードしておきます.  
 初めに必要なライブラリのインストールを行います.  
 ### ライブラリのインストール
-ターミナルでsummary_class_publicフォルダ内に移動し 
+ターミナルでsummary_class_publicフォルダ内に移動し
+```bash
+   $echo termextract==0.12b0 >> requirements.txt
+```
+を実行した後,
 ```bash
     $pip install -r requirements.txt
     または
