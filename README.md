@@ -1,4 +1,4 @@
-# summary_class
+# MakeClassEasy
 
 ## 概要
 Azure Speech と bag-of-wordsを使って、録音した授業の音声データから授業の要約を作ろうというプロジェクト
