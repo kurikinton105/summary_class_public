@@ -27,8 +27,8 @@ jobs:
         platform-version: '3.7'
 
     - name: 'Deploy to Azure Web App'
-      uses: azure/webapps-deploy@v1
+      uses: azure/webapps-deploy@v2
       with:
         app-name: 'summary-classes-web'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9d4b78f9e669405d9c886cc2ec308257 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c713dc73a9dd469bb1ecb038dae6570a }}
