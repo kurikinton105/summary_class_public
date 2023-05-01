@@ -3,7 +3,7 @@ azure-cognitiveservices-speech==1.12.1
 janome==0.3.10
 numpy==1.22.0
 click==6.7
-Flask==1.0.2
+Flask==2.3.2
 itsdangerous==0.24
 Jinja2>=2.10.1
 MarkupSafe
