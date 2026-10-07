@@ -1,13 +1,13 @@
 --find-links wheelhouse
-azure-cognitiveservices-speech==1.12.1
+azure-cognitiveservices-speech==1.52.0
 janome==0.3.10
 numpy==1.22.0
-click==6.7
-Flask==1.0.2
-itsdangerous==0.24
-Jinja2>=2.10.1
-MarkupSafe
-Werkzeug
+click==8.5.0
+Flask==3.1.3
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.4
+Werkzeug==3.1.9
 beautifulsoup4==4.9.1
 requests==2.31.0
-
+termextract==0.12b0
