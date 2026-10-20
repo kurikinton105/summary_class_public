@@ -95,6 +95,7 @@ Azure App Service のランタイム設定と GitHub Actions のビルド時バ�
 
 ```sh
 az webapp config show --resource-group <resource-group-name> --name summary-classes-web --query linuxFxVersion
+az webapp config set --resource-group <resource-group-name> --name summary-classes-web --linux-fx-version "PYTHON|3.14"
 ```
 
 実行ランタイムの変更後、Python 3.14 上で依存関係のインストールと `python -m unittest discover -s tests -v` を確認してください。
