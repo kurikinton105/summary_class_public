@@ -9,5 +9,5 @@ Jinja2==3.1.6
 MarkupSafe==3.0.4
 Werkzeug==3.1.9
 beautifulsoup4==4.9.1
-requests==2.31.0
+requests==2.34.2
 termextract==0.12b0
