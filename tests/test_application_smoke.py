@@ -12,6 +12,14 @@ class ApplicationSmokeTests(unittest.TestCase):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
 
+    def test_main_page_summarizes_multiple_sentences(self):
+        response = self.client.post(
+            "/",
+            data={"input_text": "東京は日本の首都です。大阪は大きな都市です。京都には寺があります。横浜は港町です。"},
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertNotIn(b"Error:", response.data)
+
     def test_develop_page_renders(self):
         response = self.client.get("/develop")
         self.assertEqual(response.status_code, 200)
