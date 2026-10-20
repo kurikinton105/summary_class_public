@@ -86,3 +86,18 @@ termextract
 http://gensen.dl.itc.u-tokyo.ac.jp/
 
 のコードを使用しています。
+
+## Python 実行環境
+
+このリポジトリの開発・ビルド対象は **Python 3.14.x** です。セットアップ前に `python --version` で確認し、必要なら Python 3.14 の仮想環境を作ってから `python -m pip install -r requirements.txt` を実行してください。
+
+Azure App Service のランタイム設定と GitHub Actions のビルド時バージョンは別物です。`.github/workflows/master_summary-classes-web.yml` のビルド設定を変更しても、**既存 Azure Web App の実行ランタイム (`linuxFxVersion`) は自動では更新されません**。Python 3.14 対応版をデプロイする前に、Azure Portal か Azure CLI で App Service の実行ランタイムを `PYTHON|3.14` に変更してください。現在値は以下で確認できます。
+
+```sh
+az webapp config show --resource-group <resource-group-name> --name summary-classes-web --query linuxFxVersion
+az webapp config set --resource-group <resource-group-name> --name summary-classes-web --linux-fx-version "PYTHON|3.14"
+```
+
+実行ランタイムの変更後、Python 3.14 上で依存関係のインストールと `python -m unittest discover -s tests -v` を確認してください。
+
+参考: https://learn.microsoft.com/ja-jp/azure/app-service/configure-language-python
